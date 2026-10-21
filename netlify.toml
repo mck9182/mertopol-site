@@ -1,0 +1,4 @@
+# Mertopol sitesi: derleme yok, dosyalar olduğu gibi yayınlanır
+[build]
+  publish = "."
+  command = ""
