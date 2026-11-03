@@ -3,20 +3,3 @@
   publish = "."
   command = ""
 
-# Uygulama her açılışta en yeni sürümü alsın (eski dosya önbellekte kalmasın)
-[[headers]]
-  for = "/public/*.html"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/public/"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-[[headers]]
-  for = "/public/*.js"
-  [headers.values]
-    Cache-Control = "no-cache"
-[[headers]]
-  for = "/public/*.css"
-  [headers.values]
-    Cache-Control = "no-cache"
