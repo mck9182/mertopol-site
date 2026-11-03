@@ -1,1 +1,10 @@
-<!doctype html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0; url=/public/"><title>Mertopol</title><script>location.replace('/public/');</script></head><body style="background:#0a0612;color:#fff;font-family:system-ui;text-align:center;padding-top:40vh"><a href="/public/" style="color:#e9d5ff">Mertopol'e git ›</a></body></html>
+<!doctype html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mertopol</title>
+<!-- Yönlendirme sayfası: uygulama (APK) ve link buraya girer, buradan oyuna gider.
+     Site ileride başka yere taşınırsa sadece TARGET değişir, APK yeniden kurulmaz. -->
+<script>
+  var TARGET = 'public/';
+  var q = location.search || ''; var h = location.hash || '';
+  location.replace(TARGET + q + h);
+</script>
+<meta http-equiv="refresh" content="1; url=public/">
+</head><body style="background:#0a0612;color:#fff;font-family:system-ui;text-align:center;padding-top:40vh"><a href="public/" style="color:#e9d5ff">Mertopol'e git ›</a></body></html>
