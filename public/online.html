@@ -1,1 +1,18 @@
-<!doctype html><html lang="tr"><head><meta charset="UTF-8"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Mertopol"><meta name="theme-color" content="#0b1020"><link rel="apple-touch-icon" href="logo.png"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"><title>Mertopol Online</title><link rel="stylesheet" href="online.css?v=1793805975"></head><body style="margin:0;background:#0b1020"><div id="root"></div><script type="module" src="online.js?v=1793805975"></script></body></html>
+<!doctype html><html lang="tr"><head><meta charset="UTF-8"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Mertopol"><meta name="theme-color" content="#0b1020"><link rel="apple-touch-icon" href="logo.png"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"><title>Mertopol Online</title>
+<script>
+// Her açılışta en güncel sürümü yükle: sürüm numarası önbelleksiz okunur, dosyalar o numarayla istenir.
+(function () {
+  var fallback = '1793806120';
+  function load(v) {
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'online.css?v=' + v; document.head.appendChild(l);
+    var s = document.createElement('script'); s.type = 'module'; s.src = 'online.js?v=' + v; document.body.appendChild(s);
+  }
+  function go() {
+    var done = false; var t = setTimeout(function () { if (!done) { done = true; load(fallback); } }, 2500);
+    fetch('version.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.json(); })
+      .then(function (j) { if (!done) { done = true; clearTimeout(t); load(j.v || fallback); } })
+      .catch(function () { if (!done) { done = true; clearTimeout(t); load(fallback); } });
+  }
+  if (document.body) go(); else document.addEventListener('DOMContentLoaded', go);
+})();
+</script></head><body style="margin:0;background:#0b1020"><div id="root"></div></body></html>
